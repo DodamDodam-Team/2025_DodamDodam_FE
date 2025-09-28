@@ -13,8 +13,8 @@ part of 'http_repository.dart';
 const httpRepositoryProvider = HttpRepositoryProvider._();
 
 final class HttpRepositoryProvider
-    extends $FunctionalProvider<HttpRepositroy, HttpRepositroy, HttpRepositroy>
-    with $Provider<HttpRepositroy> {
+    extends $FunctionalProvider<HttpRepository, HttpRepository, HttpRepository>
+    with $Provider<HttpRepository> {
   const HttpRepositoryProvider._()
     : super(
         from: null,
@@ -31,21 +31,21 @@ final class HttpRepositoryProvider
 
   @$internal
   @override
-  $ProviderElement<HttpRepositroy> $createElement($ProviderPointer pointer) =>
+  $ProviderElement<HttpRepository> $createElement($ProviderPointer pointer) =>
       $ProviderElement(pointer);
 
   @override
-  HttpRepositroy create(Ref ref) {
+  HttpRepository create(Ref ref) {
     return httpRepository(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(HttpRepositroy value) {
+  Override overrideWithValue(HttpRepository value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<HttpRepositroy>(value),
+      providerOverride: $SyncValueProvider<HttpRepository>(value),
     );
   }
 }
 
-String _$httpRepositoryHash() => r'04a0e6ce9826189604fccc600ec255b6e328bdcc';
+String _$httpRepositoryHash() => r'8fb5b2ba8474aca7193b0af891fffe00391d2913';
