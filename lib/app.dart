@@ -1,3 +1,4 @@
+import 'package:dodamdodam_fe/config/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:dodamdodam_fe/config/router.dart';
 import 'package:dodamdodam_fe/config/theme.dart';
@@ -21,6 +22,7 @@ class _AppState extends ConsumerState<App> {
       builder: (context, child) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
+          backgroundColor: AppColors.background,
           body: SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
