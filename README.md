@@ -36,7 +36,8 @@ lib/
 │   └── theme.dart
 │
 ├── model/               # 데이터 모델 및 데이터 소스
-│   └── repository/
+│
+├── repository/          
 │       └── http_repository.dart
 │
 ├── view/                # UI(화면)를 구성하는 파일
