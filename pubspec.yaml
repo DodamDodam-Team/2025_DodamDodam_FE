@@ -12,6 +12,7 @@ dependencies:
   flutter_dotenv: ^6.0.0
   flutter_riverpod: ^3.0.0
   flutter_secure_storage: ^9.2.4
+  flutter_svg: ^2.2.1
   go_router: ^16.2.4
   http: ^1.5.0
   riverpod_annotation: ^3.0.0
@@ -31,7 +32,10 @@ flutter:
   fonts:
     - family: Pretendard
       fonts:
-        - asset: fonts/Pretendard/PretendardVariable.ttf
+        - asset: assets/fonts/Pretendard/PretendardVariable.ttf
 
   assets:
     - .env
+    - assets/images/
+    - assets/icons/
+    
