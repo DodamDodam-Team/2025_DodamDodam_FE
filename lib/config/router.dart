@@ -1,3 +1,6 @@
+import 'package:dodamdodam_fe/view/main_pages/home/home.dart';
+import 'package:dodamdodam_fe/view/main_pages/main_page.dart';
+import 'package:dodamdodam_fe/view/onboarding/onboarding.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
@@ -5,28 +8,51 @@ GoRouter router(GlobalKey<NavigatorState> navigatorkey) => GoRouter(
   initialLocation: "/",
   navigatorKey: navigatorkey,
   routes: [
-    GoRoute(
-      path: "/",
-      name: 'init',
-      builder: (context, state) => /*const*/ Container(),
+    ShellRoute(
+      pageBuilder: (context, state, child) =>
+          NoTransitionPage(child: OnboardingShell(child: child)),
+      routes: [
+        GoRoute(
+          path: "/",
+          name: 'splash',
+          builder: (context, state) {
+            return Container();
+          },
+        ),
+
+        GoRoute(
+          path: "/login",
+          name: 'login',
+          builder: (context, state) {
+            return Container();
+          },
+        ),
+
+        GoRoute(
+          path: "/join",
+          name: 'join',
+          builder: (context, state) {
+            return Container();
+          },
+        ),
+      ],
     ),
 
-    /**StatefulShellRoute.indexedStack(
-        parentNavigatorKey: _rootNavKey,
-        builder: (context, state, navigationShell) =>
-            SomePage(navigationShell: navigationShell),
-        branches: <StatefulShellBranch>[
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/step1',
-                pageBuilder: (context, state) =>
-                    const NoTransitionPage(child: ResearchPageStep1()),
-              ),
-            ],
-          ),
-        ],
-      ),
-   */
+    StatefulShellRoute.indexedStack(
+      parentNavigatorKey: navigatorkey,
+      builder: (context, state, navigationShell) =>
+          MainPageShell(navigationShell: navigationShell),
+      branches: <StatefulShellBranch>[
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/some',
+              pageBuilder: (context, state) =>
+                  NoTransitionPage(child: Container()),
+            ),
+          ],
+        ),
+      ],
+    ),
   ],
 );
