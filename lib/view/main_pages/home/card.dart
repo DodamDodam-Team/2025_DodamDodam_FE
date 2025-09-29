@@ -23,11 +23,15 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
-      height: height,
+      constraints: BoxConstraints(
+        minWidth: width,
+        maxWidth: width,
+        minHeight: height,
+      ),
       padding: padding,
       decoration: decoration,
-      child: child ?? Container(),
+      alignment: Alignment.topCenter,
+      child: child,
     );
   }
 }
