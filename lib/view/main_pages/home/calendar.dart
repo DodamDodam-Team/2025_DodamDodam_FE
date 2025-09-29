@@ -4,13 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+typedef ValueChanged<T> = void Function(T value);
+
 class CustomCalendar extends ConsumerStatefulWidget {
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
 
+  final ValueChanged<DateTime?>? onSelected;
+
   const CustomCalendar({
     this.padding = const EdgeInsets.symmetric(vertical: 22.5, horizontal: 8),
     this.margin,
+
+    this.onSelected,
+
     super.key,
   });
 
@@ -38,7 +45,7 @@ class _CustomCalendarState extends ConsumerState<CustomCalendar> {
           formatButtonVisible: false,
 
           titleCentered: false,
-          titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+          titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
 
           leftChevronIcon: Image.asset(
             'assets/icons/left_chevron.png',
@@ -80,8 +87,14 @@ class _CustomCalendarState extends ConsumerState<CustomCalendar> {
 
         onDaySelected: (selectedDay, focusedDay) {
           setState(() {
-            _selectedDay = selectedDay;
-            _focusedDay = selectedDay;
+            if (_selectedDay != selectedDay) {
+              _selectedDay = selectedDay;
+              _focusedDay = selectedDay;
+            } else {
+              _selectedDay = null;
+            }
+
+            if (widget.onSelected != null) widget.onSelected!(_selectedDay);
           });
         },
 
