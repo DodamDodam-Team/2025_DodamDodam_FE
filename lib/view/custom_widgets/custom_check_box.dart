@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
+
+enum CheckBoxShape { circle, rectangle }
+
 class CustomCheckbox extends StatefulWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
-  final Color? activeColor;
   final double? iconSize;
-  final BoxShape? shape;
+  final CheckBoxShape? shape;
 
   const CustomCheckbox({
     super.key,
     required this.value,
     required this.onChanged,
-    this.activeColor,
     this.iconSize,
-    this.shape = BoxShape.circle,
+    this.shape = CheckBoxShape.circle,
   });
 
   @override
@@ -34,14 +35,14 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
         padding: const EdgeInsets.all(4.0),
         child: widget.value
             ? Image.asset(
-                widget.shape == BoxShape.circle
+                widget.shape == CheckBoxShape.circle
                     ? 'assets/icons/check_mark.png'
                     : 'assets/icons/check_mark_square.png',
                 width: widget.iconSize,
                 height: widget.iconSize,
               )
             : Image.asset(
-                widget.shape == BoxShape.circle
+                widget.shape == CheckBoxShape.circle
                     ? 'assets/icons/check_mark_opacity30.png'
                     : 'assets/icons/check_mark_square_blank.png',
                 width: widget.iconSize,
