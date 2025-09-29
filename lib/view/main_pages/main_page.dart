@@ -61,7 +61,7 @@ class _MainPageShellState extends ConsumerState<MainPageShell> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+            padding: EdgeInsets.only(top: 100),
             child: widget.navigationShell,
           ),
         ],

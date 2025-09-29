@@ -11,6 +11,6 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('home'));
+    return SingleChildScrollView(child: Column(children: []));
   }
 }
