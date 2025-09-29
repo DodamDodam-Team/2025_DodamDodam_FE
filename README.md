@@ -30,36 +30,47 @@ dev_dependencies:
 ### 파일 구조
 ```
 lib/
-├── config/              # 앱의 설정 관련 파일
+├── app.dart                                // 앱 시작 점
+├── main.dart                               // 프로그램 시작
+├── config/                                 // 앱 기본 설정
 │   ├── constants.dart
 │   ├── router.dart
 │   └── theme.dart
-│
-├── model/               # 데이터 모델 및 데이터 소스
-│
-├── repository/          
-│       └── http_repository.dart
-│
-├── view/                # UI(화면)를 구성하는 파일
-│   ├── main_pages/
-│   │   ├── book_store/
-│   │   │   └── book_store.dart
-│   │   ├── community/
-│   │   │   └── community.dart
-│   │   ├── home/
-│   │   │   └── home.dart
-│   │   ├── profile/
-│   │   │   └── profile.dart
-│   │   ├── custom_bottom_navigation_bar.dart
-│   │   └── main_page.dart
-│   │
-│   └── onboarding/
-│       ├── join.dart
-│       ├── login.dart
-│       └── onboarding.dart
-│
-├── view_model/          # View와 Model을 연결하는 비즈니스 로직
-│
-├── app.dart             # 앱의 루트 위젯 (MaterialApp 등)
-└── main.dart            # 앱의 시작점
+├── model/                                  // DTO
+│   ├── monthly_record.dart
+│   ├── monthly_record.g.dart
+│   ├── reading_record.dart
+│   ├── reading_record.g.dart
+│   ├── user.dart
+│   └── user.g.dart
+├── repository/                             //API 기본 통신 함수
+│   ├── http_repository.dart
+│   └── http_repository.g.dart
+├── service/                                // 기타 관리 도구
+│   └── secure_storage.dart
+├── view/                                   // 화면
+│   ├── custom_check_box.dart
+│   └── main_pages/
+│       ├── custom_bottom_navigation_bar.dart
+│       ├── main_page.dart
+│       ├── book_store/
+│       │   └── book_store.dart
+│       ├── community/
+│       │   └── community.dart
+│       ├── home/
+│       │   ├── calendar.dart
+│       │   ├── card.dart
+│       │   ├── home.dart
+│       │   ├── reading_rate_announce.dart
+│       │   ├── reading_record.dart
+│       │   └── user_reading_info.dart
+│       ├── profile/
+│       │   └── profile.dart
+│       └── onboarding/
+│           ├── join.dart
+│           ├── login.dart
+│           └── onboarding.dart
+└── view_model/                              // API 연동 부, 비즈니스 로직 구현
+    ├── auth_view_model.dart
+    └── auth_view_model.g.dart
 ```
