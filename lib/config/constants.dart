@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+final backend_url = dotenv.get('BACKEND_URL');
 
 class AppColors {
   // Primary Colors

@@ -5,15 +5,15 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'http_repository.g.dart';
 
 @Riverpod(keepAlive: true)
-HttpRepositroy httpRepository(Ref ref) {
-  return HttpRepositroy();
+HttpRepository httpRepository(Ref ref) {
+  return HttpRepository();
 }
 
-class HttpRepositroy {
+class HttpRepository {
   Future<Map<String, dynamic>> get({
     required String url_string,
     required String end_point,
-    required Map<String, dynamic> params,
+    required Map<String, dynamic>? params,
     required Map<String, String> headers,
   }) async {
     final url = Uri.http(url_string, end_point, params);
@@ -31,7 +31,7 @@ class HttpRepositroy {
   Future<Map<String, dynamic>> post({
     required String url_string,
     required String end_point,
-    required Map<String, dynamic> params,
+    required Map<String, dynamic>? params,
     required Map<String, String> headers,
     required Map<String, dynamic> body,
   }) async {
@@ -50,7 +50,7 @@ class HttpRepositroy {
   Future<Map<String, dynamic>> put({
     required String url_string,
     required String end_point,
-    required Map<String, dynamic> params,
+    required Map<String, dynamic>? params,
     required Map<String, String> headers,
     required Map<String, dynamic> body,
   }) async {
