@@ -35,6 +35,9 @@ flutter:
     - family: Pretendard
       fonts:
         - asset: assets/fonts/Pretendard/PretendardVariable.ttf
+    - family: GangwonEduSaeeum
+      fonts:
+        - asset: assets/fonts/GangwonEduSaeeum/GangwonEduSaeeum.ttf
 
   assets:
     - .env
