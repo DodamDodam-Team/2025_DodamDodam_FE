@@ -70,51 +70,62 @@ class _ReadingRecordWidgetState extends ConsumerState<ReadingRecordWidget> {
   }
 
   Widget _saveButton() {
-    return Container(
-      width: 331,
-      height: 30,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: Color(0xffA9A28A),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        '저장하기',
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w700,
-          color: Color(0xffffffff),
+    return GestureDetector(
+      onTap: () {
+        /// TODO: 저장 프로세스 연결
+      },
+      child: Container(
+        width: 331,
+        height: 30,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Color(0xffA9A28A),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          '저장하기',
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w700,
+            color: Color(0xffffffff),
+          ),
         ),
       ),
     );
   }
 
   Widget _imgaeUpload() {
-    return Container(
-      width: 154,
-      height: 176,
-      decoration: BoxDecoration(
-        color: AppColors.surfaceVariant,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      alignment: Alignment.center,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsetsGeometry.all(3),
-            child: Image.asset('assets/icons/add.png', width: 16, height: 16),
-          ),
-
-          Text(
-            '사진 업로드',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Color(0xff000000),
+    return GestureDetector(
+      onTap: () {
+        /// TODO:
+        /// 이미지 업로드 - 파일 업로드 + 사진 촬영 후 파일 업로드
+      },
+      child: Container(
+        width: 154,
+        height: 176,
+        decoration: BoxDecoration(
+          color: AppColors.surfaceVariant,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsetsGeometry.all(3),
+              child: Image.asset('assets/icons/add.png', width: 16, height: 16),
             ),
-          ),
-        ],
+
+            Text(
+              '사진 업로드',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff000000),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
