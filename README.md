@@ -31,7 +31,7 @@ dev_dependencies:
 ```
 lib/
 ├── config/              # 앱의 설정 관련 파일
-│   ├── colors.dart
+│   ├── constants.dart
 │   ├── router.dart
 │   └── theme.dart
 │
