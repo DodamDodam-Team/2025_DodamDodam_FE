@@ -1,5 +1,5 @@
 import 'package:dodamdodam_fe/config/constants.dart';
-import 'package:dodamdodam_fe/view/custom_check_box.dart';
+import 'package:dodamdodam_fe/view/custom_widgets/custom_check_box.dart';
 import 'package:dodamdodam_fe/view/main_pages/home/card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
