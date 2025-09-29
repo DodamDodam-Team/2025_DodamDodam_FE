@@ -1,5 +1,5 @@
 import 'package:dodamdodam_fe/config/constants.dart';
-import 'package:dodamdodam_fe/view/main_pages/custom_bottom_navigation_bar.dart';
+import 'package:dodamdodam_fe/view/custom_widgets/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
