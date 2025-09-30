@@ -9,11 +9,13 @@ class ReadingRecordWidget extends ConsumerStatefulWidget {
   final DateTime date;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
+  final GestureTapCallback? onSaved;
 
   const ReadingRecordWidget({
     required this.date,
     this.padding = const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
     this.margin,
+    this.onSaved,
     super.key,
   });
 
@@ -46,7 +48,13 @@ class _ReadingRecordWidgetState extends ConsumerState<ReadingRecordWidget> {
       ),
       padding: widget.padding,
       margin: widget.margin,
-      child: Column(children: [_dayText(), _infoBox(), _saveButton()]),
+      child: Column(
+        children: [
+          _dayText(),
+          _infoBox(),
+          _saveButton(onTap: widget.onSaved),
+        ],
+      ),
     );
   }
 
@@ -69,11 +77,9 @@ class _ReadingRecordWidgetState extends ConsumerState<ReadingRecordWidget> {
     );
   }
 
-  Widget _saveButton() {
+  Widget _saveButton({GestureTapCallback? onTap}) {
     return GestureDetector(
-      onTap: () {
-        /// TODO: 저장 프로세스 연결
-      },
+      onTap: onTap,
       child: Container(
         width: 331,
         height: 30,
