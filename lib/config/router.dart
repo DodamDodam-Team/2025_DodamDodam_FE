@@ -1,6 +1,8 @@
+import 'package:dodamdodam_fe/service/dialog_page.dart';
 import 'package:dodamdodam_fe/view/main_pages/book_store/book_store.dart';
 import 'package:dodamdodam_fe/view/main_pages/community/community.dart';
 import 'package:dodamdodam_fe/view/main_pages/home/home.dart';
+import 'package:dodamdodam_fe/view/main_pages/home/modal.dart';
 import 'package:dodamdodam_fe/view/main_pages/main_page.dart';
 import 'package:dodamdodam_fe/view/main_pages/profile/profile.dart';
 import 'package:dodamdodam_fe/view/onboarding/join.dart';
@@ -41,6 +43,12 @@ GoRouter router(GlobalKey<NavigatorState> navigatorkey) => GoRouter(
           },
         ),
       ],
+    ),
+
+    GoRoute(
+      path: '/quiz',
+      name: 'quiz',
+      pageBuilder: (context, state) => DialogPage(builder: (_) => QuizPage()),
     ),
 
     StatefulShellRoute.indexedStack(
