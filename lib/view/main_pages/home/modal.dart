@@ -3,6 +3,7 @@ import 'package:dodamdodam_fe/view/main_pages/home/card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class QuizPage extends ConsumerStatefulWidget {
   const QuizPage({super.key});
@@ -30,15 +31,22 @@ class _QuizPageState extends ConsumerState<QuizPage> {
             color: AppColors.background,
           ),
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // .png
-              Image.asset('assets/icons/close.png', width: 23, height: 23),
-
-              // .svg
-              //SvgPicture.asset('assets/icons/...');
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                width: 0,
+                height: 0,
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).pop();
+                  },
+                  child: Image.asset(
+                    'assets/icons/close.png',
+                    width: 23,
+                    height: 23,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
