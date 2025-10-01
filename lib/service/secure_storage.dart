@@ -1,7 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 //SecureStorageManager
-class S2Manger {
+class S2Manager {
   static final _storage = new FlutterSecureStorage();
 
   static Future<void> saveData(String key, String data) async {
