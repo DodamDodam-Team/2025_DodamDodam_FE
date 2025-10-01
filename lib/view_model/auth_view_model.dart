@@ -16,13 +16,16 @@ class AuthViewModel extends _$AuthViewModel {
     return 0;
   }
 
-  Future<void> login(String username, String password) async {
+  Future<void> login({
+    required String username,
+    required String password,
+  }) async {
     try {
       final data = await _repository.post(
         url_string: backend_url,
         end_point: '/api/login',
         params: null,
-        headers: {},
+        headers: {'accept': '*/*', 'Content-Type': 'application/json'},
         body: {'username': username, 'password': password},
       );
 
@@ -30,7 +33,7 @@ class AuthViewModel extends _$AuthViewModel {
         '[DEBUG:LOGIN] ACCESS_TOKEN = ${data['token']}',
         name: 'AuthViewModel.login',
       );
-      S2Manger.saveData('ACCESS_TOKEN', data['token']);
+      S2Manager.saveData('ACCESS_TOKEN', data['token']);
     } catch (e) {
       throw Exception('Failed to login : $e');
     }
@@ -38,14 +41,17 @@ class AuthViewModel extends _$AuthViewModel {
 
   /// TODO:
   /// api 명세 업데이트 내역 확인 후 request body 재설정 필요
-  Future<void> join() async {
+  Future<void> join({
+    required String username,
+    required String password,
+  }) async {
     try {
       final data = await _repository.post(
         url_string: backend_url,
         end_point: '/api/join',
         params: null,
-        headers: {},
-        body: {},
+        headers: {'accept': '*/*', 'Content-Type': 'application/json'},
+        body: {'username': username, 'password': password},
       );
 
       log('[DEBUG:JOIN] ACCESS_TOKEN = ${data}', name: 'AuthViewModel.join');
