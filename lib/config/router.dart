@@ -8,11 +8,12 @@ import 'package:dodamdodam_fe/view/main_pages/profile/profile.dart';
 import 'package:dodamdodam_fe/view/onboarding/join.dart';
 import 'package:dodamdodam_fe/view/onboarding/login.dart';
 import 'package:dodamdodam_fe/view/onboarding/onboarding.dart';
+import 'package:dodamdodam_fe/view/onboarding/splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter router(GlobalKey<NavigatorState> navigatorkey) => GoRouter(
-  initialLocation: "/home", // 시작 화면 지정
+  initialLocation: "/", // 시작 화면 지정
   navigatorKey: navigatorkey,
   routes: [
     ShellRoute(
@@ -23,7 +24,7 @@ GoRouter router(GlobalKey<NavigatorState> navigatorkey) => GoRouter(
           path: "/",
           name: 'splash',
           builder: (context, state) {
-            return Container();
+            return SplashPage();
           },
         ),
 

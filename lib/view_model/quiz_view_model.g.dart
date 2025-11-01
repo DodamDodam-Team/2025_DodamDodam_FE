@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_view_model.dart';
+part of 'quiz_view_model.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,28 +9,28 @@ part of 'auth_view_model.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(AuthViewModel)
-const authViewModelProvider = AuthViewModelProvider._();
+@ProviderFor(QuizViewModel)
+const quizViewModelProvider = QuizViewModelProvider._();
 
-final class AuthViewModelProvider
-    extends $NotifierProvider<AuthViewModel, int> {
-  const AuthViewModelProvider._()
+final class QuizViewModelProvider
+    extends $NotifierProvider<QuizViewModel, int> {
+  const QuizViewModelProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'authViewModelProvider',
+        name: r'quizViewModelProvider',
         isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$authViewModelHash();
+  String debugGetCreateSourceHash() => _$quizViewModelHash();
 
   @$internal
   @override
-  AuthViewModel create() => AuthViewModel();
+  QuizViewModel create() => QuizViewModel();
 
   /// {@macro riverpod.override_with_value}
   Override overrideWithValue(int value) {
@@ -41,9 +41,9 @@ final class AuthViewModelProvider
   }
 }
 
-String _$authViewModelHash() => r'bd652080a3b8bc49ad799eec6aa5561c9b4d3b91';
+String _$quizViewModelHash() => r'ffca58ee2a07f5db36627b1125680d3124f1131d';
 
-abstract class _$AuthViewModel extends $Notifier<int> {
+abstract class _$QuizViewModel extends $Notifier<int> {
   int build();
   @$mustCallSuper
   @override
