@@ -1,5 +1,7 @@
 # 도담도담 FE
 
+<img width="7680" height="4320" alt="Image" src="https://github.com/user-attachments/assets/11cfecda-ca60-475a-856b-d9bb4f7b808c" />
+
 ## 사용 기술
   ### 언어
   - Dart
